@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="lectures">
+        <item>Week1</item>
+        <item>Week2</item>
+        <item>Week3</item>
+        <item>Week4</item>
+        <item>Week5</item>
+
+    </string-array>
+
+</resources>
