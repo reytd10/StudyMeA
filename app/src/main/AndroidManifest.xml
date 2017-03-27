@@ -20,7 +20,8 @@
         <activity android:name=".SignUpStudentAccount" />
         <activity android:name=".NewUserSuccess" />
         <activity android:name=".SignUpParentAccount" />
-        <activity android:name=".SignUpPage"></activity>
+        <activity android:name=".SignUpPage" />
+        <activity android:name=".TestPage"></activity>
     </application>
 
 </manifest>
