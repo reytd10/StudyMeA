@@ -10,11 +10,8 @@
 
 
     <string-array name="test">
-        <item>Week1</item>
-        <item>Week2</item>
-        <item>Week3</item>
-        <item>Week4</item>
-        <item>Week5</item>
+        <item>Weekly Test</item>
+        <item>Monthly Test</item>
     </string-array>
 
 </resources>

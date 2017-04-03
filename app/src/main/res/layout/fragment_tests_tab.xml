@@ -11,9 +11,13 @@
         android:text=" "
         android:id="@+id/frag1" />
 
-    <ListView
-        android:id="@+id/listView1"
+    <ExpandableListView
+        android:id="@+id/expList1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:divider="#3b3b42"
+        android:dividerHeight="1dp"
+        android:childDivider="#091d3d"
+        />
 
 </FrameLayout>
