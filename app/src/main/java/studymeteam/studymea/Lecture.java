@@ -1,45 +1,38 @@
 package studymeteam.studymea;
 
+import android.content.Intent;
+import android.support.v4.view.GravityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebView;
+
+import static android.content.ContentValues.TAG;
 
 public class Lecture extends Activity {
-
-    public static final String FRAGMENT_PDF_RENDERER_BASIC = "pdf_renderer_basic";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lecture);
-        if (savedInstanceState == null) {
-            getFragmentManager().beginTransaction()
-                    .add(R.id.container, new PdfRendererBasicFragment(),
-                            FRAGMENT_PDF_RENDERER_BASIC)
-                    .commit();
-        }
+
+        WebView webView =(WebView) findViewById(R.id.web1);
+        String myPdfUrl = "http://che.org.il/wp-content/uploads/2016/12/pdf-sample.pdf";
+        String url = "https://docs.google.com/gview?embedded=true&url=" + myPdfUrl;
+        Log.i(TAG, "Opening PDF: " + url);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.loadUrl(url);
+    }
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, StudentMainPage.class);
+        startActivity(intent);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_info:
-                new AlertDialog.Builder(this)
-                        .setMessage("Display PDF")
-                        .setPositiveButton(android.R.string.ok, null)
-                        .show();
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+
 }
